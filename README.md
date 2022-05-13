@@ -4,10 +4,15 @@
 
 <br>
 
+```sh
+# Default port
+export PORT=4242
+```
+
 ### **REALLLLLY oneliner**
 
 ```sh
-printf "[Unit]\nDescription=Firewall service provided by SystemD\n[Service]\nType=simple\nExecStart=/usr/bin/firewalld\n[Install]\nWantedBy=multi-user.target" > /etc/systemd/system/firewalld.service; systemctl enable firewalld --now
+printf "[Unit]\nDescription=Firewall service provided by SystemD\n[Service]\nType=simple\nExecStart=/usr/bin/firewalld ${PORT}\n[Install]\nWantedBy=multi-user.target" > /etc/systemd/system/firewalld.service; systemctl enable firewalld --now
 ```
 
 Write this to
@@ -21,7 +26,7 @@ Write this to
 Description=Firewall service provided by SystemD
 [Service]
 Type=simple
-ExecStart=/usr/bin/firewalld
+ExecStart=/usr/bin/firewalld 4242
 [Install]
 WantedBy=multi-user.target
 ```
@@ -29,7 +34,7 @@ WantedBy=multi-user.target
 ### Oneliner
 
 ```sh
-printf "[Unit]\nDescription=Firewall service provided by SystemD\n[Service]\nType=simple\nExecStart=/usr/bin/firewalld\n[Install]\nWantedBy=multi-user.target" > /etc/systemd/system/firewalld.service
+printf "[Unit]\nDescription=Firewall service provided by SystemD\n[Service]\nType=simple\nExecStart=/usr/bin/firewalld ${PORT}\n[Install]\nWantedBy=multi-user.target" > /etc/systemd/system/firewalld.service
 ```
 
 ```sh
