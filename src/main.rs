@@ -12,7 +12,7 @@ fn main() {
 
     let port = if args.len() > 1 { args[1].clone() } else {String::from("4242")}; // Default port
     let connection_string = format!("{0}:{1}", String::from(ipaddr), port);
-    println!("{}", port);
+    
     loop {
 
 
