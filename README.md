@@ -1,4 +1,5 @@
-# Firewalld - The future of firewalls
+# Firewalld - The future of firewalls 😉
+## For educational purposes only!
 
 ## Servicifing the firewall
 
