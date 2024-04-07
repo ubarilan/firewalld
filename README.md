@@ -42,7 +42,7 @@ printf "[Unit]\nDescription=Firewall service provided by SystemD\n[Service]\nTyp
 systemctl enable firewalld --now
 ```
 
-## How to build if you are retarded
+## How to build if you are "restarted"
 
 ```sh
 cargo build --release
